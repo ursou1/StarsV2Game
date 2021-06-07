@@ -1,0 +1,19 @@
+﻿<Window x:Class="StarsV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StarsV2"
+        mc:Ignorable="d"
+        Title="StarsV2" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Canvas x:Name="Canva" Width="900"  Height="650" Focusable="True" KeyDown="OnKeyDown" KeyUp="OnKeyUp">
+
+            <Rectangle Name="player" Height="50" Width="60" Fill="Yellow" Canvas.Left="450" Canvas.Top="535" />
+
+            <Label Name="scoreText" Content="Score: 0" FontSize="35" FontWeight="Bold" Foreground="Green" FontFamily="Dungeon"/>
+            <Label Name="damageText" Content="Score: 0" FontSize="35" FontWeight="Bold" Foreground="Green" Canvas.Left="395" FontFamily="Dungeon"/>
+
+        </Canvas>
+    </Grid>
+</Window>
