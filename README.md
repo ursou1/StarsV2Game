@@ -20,4 +20,4 @@ player sprite
 ![Karta_kosmo](https://user-images.githubusercontent.com/71076236/120964855-4ff73900-c7a7-11eb-82f6-134820d295f0.png)
 
 
-
+В планах сделать нормальный спавн препятствий
