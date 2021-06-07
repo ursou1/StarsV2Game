@@ -15,6 +15,9 @@ player sprite
 ![met5](https://user-images.githubusercontent.com/71076236/120964811-3b1aa580-c7a7-11eb-8f5d-0cd5667468cb.png)
 ![met1](https://user-images.githubusercontent.com/71076236/120964816-3ce46900-c7a7-11eb-978b-7e762f4849dc.png)
 
+И сама карта
+
+![Karta_kosmo](https://user-images.githubusercontent.com/71076236/120964855-4ff73900-c7a7-11eb-82f6-134820d295f0.png)
 
 
 
