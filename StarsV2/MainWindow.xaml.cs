@@ -68,13 +68,13 @@ namespace StarsV2
         private void GameLoop(object sender, EventArgs e)
         {
             playerHitBox = new Rect(Canvas.GetLeft(player), Canvas.GetTop(player), player.Width, player.Height);
-
-            enemyCounter -= 1;
+            score += 5;
+            enemyCounter -= 10;
 
             scoreText.Content = "Score: " + score;
             damageText.Content = "Damage " + damage;
 
-            if (enemyCounter < 0)
+            if (enemyCounter < 20)
             {
                 MakeEnemies();
                 enemyCounter = limit;
@@ -127,7 +127,6 @@ namespace StarsV2
                     if (Canvas.GetTop(x) > 750)
                     {
                         itemRemover.Add(x);
-                        damage += 10;
                     }
 
                     Rect enemyHitBox = new Rect(Canvas.GetLeft(x), Canvas.GetTop(x), x.Width, x.Height);
@@ -147,11 +146,11 @@ namespace StarsV2
             }
 
 
-            if (score > 5)
-            {
-                limit = 20;
-                enemySpeed = 15;
-            }
+            //if (score > 5)
+            //{
+            //    limit = 20;
+            //    enemySpeed = 15;
+            //}
 
             if (damage > 99)
             {
@@ -245,7 +244,7 @@ namespace StarsV2
             };
 
             Canvas.SetTop(newEnemy, -100);
-            Canvas.SetLeft(newEnemy, rand.Next(30, 430));
+            Canvas.SetLeft(newEnemy, rand.Next(30, 870));
             Canva.Children.Add(newEnemy);
         }
     }
