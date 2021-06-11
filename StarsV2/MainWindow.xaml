@@ -7,13 +7,8 @@
         mc:Ignorable="d"
         Title="StarsV2" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Canvas x:Name="Canva" Width="900"  Height="650" Focusable="True" KeyDown="OnKeyDown" KeyUp="OnKeyUp">
-
-            <Rectangle Name="player" Height="50" Width="60" Fill="Yellow" Canvas.Left="450" Canvas.Top="535" />
-
-            <Label Name="scoreText" Content="Score: 0" FontSize="35" FontWeight="Bold" Foreground="Green" FontFamily="Dungeon"/>
-            <Label Name="damageText" Content="Score: 0" FontSize="35" FontWeight="Bold" Foreground="Green" Canvas.Left="395" FontFamily="Dungeon"/>
-
+        <Canvas Width="900"  Height="650">
+        <Frame  Name="MainFrame" NavigationUIVisibility="Hidden"/>
         </Canvas>
     </Grid>
 </Window>

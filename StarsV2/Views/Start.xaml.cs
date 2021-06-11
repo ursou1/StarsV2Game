@@ -1,11 +1,6 @@
-﻿using StarsV2.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.IO.Packaging;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -15,22 +10,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
-namespace StarsV2
+namespace StarsV2.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для Start.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Start : Page
     {
-        
-        public MainWindow()
+        public Start()
         {
             InitializeComponent();
-            MainFrame.Content = new Start();
-
         }
-       
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MeMain());
+        }
+
+        //private void Button_Click_1(object sender, RoutedEventArgs e)
+        //{
+
+        //}
     }
 }
