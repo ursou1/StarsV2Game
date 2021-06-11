@@ -19,9 +19,9 @@ using System.Windows.Threading;
 namespace StarsV2
 {
     /// <summary>
-    /// Логика взаимодействия для MeMain.xaml
+    /// Логика взаимодействия для Game.xaml
     /// </summary>
-    public partial class MeMain : Page
+    public partial class Game : Window
     {
         DispatcherTimer gameTimer = new DispatcherTimer();
         bool moveLeft, moveRight;
@@ -38,7 +38,7 @@ namespace StarsV2
         int enemySpeed = 10;
 
         Rect playerHitBox;
-        public MeMain()
+        public Game()
         {
             InitializeComponent();
             #region background для элемента canvas
@@ -63,7 +63,6 @@ namespace StarsV2
             ImageBrush playerImage = new ImageBrush();
             playerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/korabl.png"));
             player.Fill = playerImage;
-
         }
         private void GameLoop(object sender, EventArgs e)
         {

@@ -1,5 +1,4 @@
-﻿using StarsV2.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO.Packaging;
@@ -28,7 +27,6 @@ namespace StarsV2
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new Start();
 
         }
        
