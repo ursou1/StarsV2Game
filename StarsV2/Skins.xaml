@@ -1,0 +1,36 @@
+﻿<Window x:Class="StarsV2.Skins"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StarsV2"
+        mc:Ignorable="d"
+        Title="Skins" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition  Height="75"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">
+            <Image Source="Sprites/korabl.png" Width="250" />
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
+            
+            <Image Source="Sprites/korabl1.png" Width="200"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" Grid.Row="1">
+            <Button Content="Select" Height="50" Width="100" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Grid.Row="1">
+            <Button Content="Select" Height="50" Width="100"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Назад" Height="50" Width="100" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

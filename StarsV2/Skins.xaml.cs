@@ -13,26 +13,19 @@ using System.Windows.Shapes;
 namespace StarsV2
 {
     /// <summary>
-    /// Логика взаимодействия для GameMenu.xaml
+    /// Логика взаимодействия для Skins.xaml
     /// </summary>
-    public partial class GameMenu : Window
+    public partial class Skins : Window
     {
-        public GameMenu()
+        public Skins()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Game game = new Game();
-            game.Show();
-            Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Skins skins = new Skins();
-            skins.Show();
+            GameMenu gameMenu = new GameMenu();
+            gameMenu.Show();
             Close();
         }
     }

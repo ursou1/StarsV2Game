@@ -10,7 +10,7 @@
         <Canvas Width="900"  Height="650" HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <Button Content="Играть" Padding="15" Width="100" Canvas.Left="400" Canvas.Top="301" Click="Button_Click"/>
-            <Button Content="Скин" Padding="15" Width="100" Canvas.Left="400" Canvas.Top="301" Margin="0,60,0,0"/>
+            <Button Content="Скин" Padding="15" Width="100" Canvas.Left="400" Canvas.Top="301" Margin="0,60,0,0" Click="Button_Click_1"/>
             <!--<Button Content="Выбрать скин" Padding="5" Margin="5" Click="Button_Click_1"/>-->
         </Canvas>
     </Grid>

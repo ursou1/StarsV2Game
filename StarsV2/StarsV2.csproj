@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="Sprites\Karta_kosmo.png" />
     <None Remove="Sprites\korabl.png" />
+    <None Remove="Sprites\korabl1.png" />
     <None Remove="Sprites\met1.png" />
     <None Remove="Sprites\met2.png" />
     <None Remove="Sprites\met3.png" />
@@ -26,6 +27,9 @@
     <Content Include="Sprites\korabl.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sprites\korabl1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sprites\met1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -41,10 +45,6 @@
     <Content Include="Sprites\met5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\" />
   </ItemGroup>
 
 </Project>
