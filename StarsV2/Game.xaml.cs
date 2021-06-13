@@ -208,6 +208,12 @@ namespace StarsV2
                 Canva.Children.Add(newBullet);
 
             }
+            if (e.Key == Key.Escape)
+            {
+                GameMenu gameMenu = new GameMenu();
+                gameMenu.Show();
+                Close();
+            }
         }
 
         private void MakeEnemies()
@@ -247,5 +253,7 @@ namespace StarsV2
             Canvas.SetLeft(newEnemy, rand.Next(30, 870));
             Canva.Children.Add(newEnemy);
         }
+
+
     }
 }

@@ -17,16 +17,18 @@ namespace StarsV2
     /// </summary>
     public partial class Skins : Window
     {
+        
         public Skins()
         {
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             GameMenu gameMenu = new GameMenu();
             gameMenu.Show();
             Close();
         }
+
+        
     }
 }

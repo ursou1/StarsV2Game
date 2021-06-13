@@ -17,9 +17,11 @@ namespace StarsV2
     /// </summary>
     public partial class GameMenu : Window
     {
+        
         public GameMenu()
         {
             InitializeComponent();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
