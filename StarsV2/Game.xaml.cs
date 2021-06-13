@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.IO.Packaging;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -51,7 +52,7 @@ namespace StarsV2
             gameTimer.Start();
 
             Canva.Focus();
-
+            Canva.MouseLeftButtonDown += Xorek;
             ImageBrush bg = new ImageBrush();
 
             //bg.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/Karta_kosmo.png"));
@@ -206,8 +207,10 @@ namespace StarsV2
                 Canvas.SetTop(newBullet, Canvas.GetTop(player) - newBullet.Height);
 
                 Canva.Children.Add(newBullet);
-
+               
+                //Thread.Sleep(50);
             }
+
             if (e.Key == Key.Escape)
             {
                 GameMenu gameMenu = new GameMenu();
@@ -254,6 +257,25 @@ namespace StarsV2
             Canva.Children.Add(newEnemy);
         }
 
+        public void Xorek(object sender, MouseButtonEventArgs e)
+        {
+            Rectangle newBullet = new Rectangle
+            {
 
+                Tag = "bullet",
+                Height = 20,
+                Width = 5,
+                Fill = Brushes.White,
+                Stroke = Brushes.Red
+
+            };
+
+            Canvas.SetLeft(newBullet, Canvas.GetLeft(player) + player.Width / 2);
+            Canvas.SetTop(newBullet, Canvas.GetTop(player) - newBullet.Height);
+
+            Canva.Children.Add(newBullet);
+        }
+
+       
     }
 }
