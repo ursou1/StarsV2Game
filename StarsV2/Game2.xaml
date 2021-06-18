@@ -11,8 +11,8 @@
 
             <Rectangle Name="player" Height="50" Width="60" Fill="Yellow" Canvas.Left="450" Canvas.Top="535" />
 
-            <Label Name="scoreText" Content="Score: 0" FontSize="35" FontWeight="Bold" Foreground="Green" FontFamily="Dungeon"/>
-            <Label Name="damageText" Content="Score: 0" FontSize="35" FontWeight="Bold" Foreground="Green" Canvas.Left="395" FontFamily="Dungeon"/>
+            <Label Name="scoreText" Content="Score: 0" FontSize="35" FontWeight="Bold" Foreground="OrangeRed" FontFamily="Dungeon"/>
+            <Label Name="damageText" Content="Score: 0" FontSize="35" FontWeight="Bold" Foreground="OrangeRed" Canvas.Left="395" FontFamily="Dungeon"/>
 
         </Canvas>
     </Grid>

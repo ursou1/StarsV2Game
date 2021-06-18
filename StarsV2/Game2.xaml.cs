@@ -43,7 +43,7 @@ namespace StarsV2
         {
             InitializeComponent();
             #region background для элемента canvas
-            string path = Environment.CurrentDirectory + "/Sprites/Karta_kosmo.png";
+            string path = Environment.CurrentDirectory + "/Sprites/Karta2.png";
             Canva.Background = new ImageBrush(new BitmapImage(new Uri(path)));
             #endregion
 
@@ -152,10 +152,10 @@ namespace StarsV2
             //    enemySpeed = 15;
             //}
 
-            if (damage > 99)
+            if (damage > 49)
             {
                 gameTimer.Stop();
-                damageText.Content = "Damage: 100";
+                damageText.Content = "Damage: 50";
                 damageText.Foreground = Brushes.Red;
                 MessageBox.Show("Score " + score + " " + Environment.NewLine + "Game end");
 
