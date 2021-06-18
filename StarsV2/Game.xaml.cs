@@ -215,6 +215,7 @@ namespace StarsV2
             {
                 GameMenu gameMenu = new GameMenu();
                 gameMenu.Show();
+                gameTimer.Stop();
                 Close();
             }
         }

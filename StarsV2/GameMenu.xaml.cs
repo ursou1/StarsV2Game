@@ -32,11 +32,6 @@ namespace StarsV2
             
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Skins skins = new Skins();
-            skins.Show();
-            Close();
-        }
+        
     }
 }
