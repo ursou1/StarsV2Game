@@ -29,6 +29,18 @@ namespace StarsV2
             Close();
         }
 
-        
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Game game = new Game();
+            game.Show();
+            Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Game2 game2 = new Game2();
+            game2.Show();
+            Close();
+        }
     }
 }
