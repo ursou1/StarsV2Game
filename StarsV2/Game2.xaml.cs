@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO.Packaging;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,7 +28,8 @@ namespace StarsV2
         DispatcherTimer gameTimer = new DispatcherTimer();
         bool moveLeft, moveRight;
         List<Rectangle> itemRemover = new List<Rectangle>();
-
+        SoundPlayer gimi = new SoundPlayer(Environment.CurrentDirectory + "/Music/musiclvl1.wav");
+        SoundPlayer lisi = new SoundPlayer(Environment.CurrentDirectory + "/Music/Lose1.wav");
         Random rand = new Random();
 
         int enemySpriteCounter = 0;
@@ -55,15 +57,10 @@ namespace StarsV2
             Canva.MouseLeftButtonDown += Xorek;
             ImageBrush bg = new ImageBrush();
 
-            //bg.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/Karta_kosmo.png"));
-            //bg.TileMode = TileMode.Tile;
-            //bg.Viewport = new Rect(0, 0, 0.15, 0.15);
-            //bg.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
-            //Canva.Background = bg;
-
             ImageBrush playerImage = new ImageBrush();
             playerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/korabl1.png"));
             player.Fill = playerImage;
+            gimi.Play();
         }
         private void GameLoop(object sender, EventArgs e)
         {
@@ -157,11 +154,25 @@ namespace StarsV2
                 gameTimer.Stop();
                 damageText.Content = "Damage: 50";
                 damageText.Foreground = Brushes.Red;
-                MessageBox.Show("Score " + score + " " + Environment.NewLine + "Game end");
+                gimi.Stop();
+                lisi.Play();
+                ImageBrush kos = new ImageBrush();
+                kos.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/K_O.png"));
+                Rectangle newkos = new Rectangle
+                {
+                    Tag = "enemy",
+                    Height = 200,
+                    Width = 220,
+                    Fill = kos
+                };
+                Canvas.SetTop(newkos, 220);
+                Canvas.SetLeft(newkos, 360);
+                Canva.Children.Add(newkos);
+
+                MessageBox.Show("Score " + score + " " + Environment.NewLine + "Game end"); ;
 
                 System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
                 Application.Current.Shutdown();
-
             }
 
 
@@ -198,17 +209,15 @@ namespace StarsV2
                     Tag = "bullet",
                     Height = 20,
                     Width = 5,
-                    Fill = Brushes.White,
-                    Stroke = Brushes.Red
+                    Fill = Brushes.GreenYellow,
+                    Stroke = Brushes.Aqua
 
                 };
 
                 Canvas.SetLeft(newBullet, Canvas.GetLeft(player) + player.Width / 2);
                 Canvas.SetTop(newBullet, Canvas.GetTop(player) - newBullet.Height);
-
                 Canva.Children.Add(newBullet);
 
-                //Thread.Sleep(50);
             }
 
             if (e.Key == Key.Escape)
@@ -216,6 +225,7 @@ namespace StarsV2
                 GameMenu gameMenu = new GameMenu();
                 gameMenu.Show();
                 gameTimer.Stop();
+                gimi.Stop();
                 Close();
             }
         }
@@ -224,25 +234,25 @@ namespace StarsV2
         {
             ImageBrush enemySprite = new ImageBrush();
 
-            enemySpriteCounter = rand.Next(1, 5);
+            enemySpriteCounter = rand.Next(1, 3);
 
             switch (enemySpriteCounter)
             {
                 case 1:
-                    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/met1.png"));
+                    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/p1.png"));
                     break;
                 case 2:
-                    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/met2.png"));
+                    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/met1.png"));
                     break;
-                case 3:
-                    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/met3.png"));
-                    break;
-                case 4:
-                    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/met4.png"));
-                    break;
-                case 5:
-                    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/met5.png"));
-                    break;
+                //case 3:
+                //    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/met3.png"));
+                //    break;
+                //case 4:
+                //    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/met4.png"));
+                //    break;
+                //case 5:
+                //    enemySprite.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/met5.png"));
+                //    break;
             }
 
             Rectangle newEnemy = new Rectangle
@@ -266,8 +276,8 @@ namespace StarsV2
                 Tag = "bullet",
                 Height = 20,
                 Width = 5,
-                Fill = Brushes.White,
-                Stroke = Brushes.Red
+                Fill = Brushes.GreenYellow,
+                Stroke = Brushes.Aqua
 
             };
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Media;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,7 +18,7 @@ namespace StarsV2
     /// </summary>
     public partial class GameMenu : Window
     {
-        
+        SoundPlayer ready = new SoundPlayer(Environment.CurrentDirectory + "/Music/ready.wav");
         public GameMenu()
         {
             InitializeComponent();
@@ -27,9 +28,9 @@ namespace StarsV2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Skins skins = new Skins();
+            ready.Play();
             skins.Show();
             Close();
-            
         }
 
         

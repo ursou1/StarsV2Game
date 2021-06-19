@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO.Packaging;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,11 +26,12 @@ namespace StarsV2
     public partial class Game : Window
     {
         DispatcherTimer gameTimer = new DispatcherTimer();
-        bool moveLeft, moveRight;
         List<Rectangle> itemRemover = new List<Rectangle>();
-
+        SoundPlayer gimi = new SoundPlayer(Environment.CurrentDirectory + "/Music/musiclvl2.wav");
+        SoundPlayer lisi = new SoundPlayer(Environment.CurrentDirectory + "/Music/Lose3.wav");
         Random rand = new Random();
-
+        
+        bool moveLeft, moveRight;
         int enemySpriteCounter = 0;
         int enemyCounter = 100;
         int playerSpeed = 10;
@@ -50,20 +52,14 @@ namespace StarsV2
             gameTimer.Interval = TimeSpan.FromMilliseconds(20);
             gameTimer.Tick += GameLoop;
             gameTimer.Start();
-
+            gimi.Play();
             Canva.Focus();
             Canva.MouseLeftButtonDown += Xorek;
             ImageBrush bg = new ImageBrush();
-
-            //bg.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/Karta_kosmo.png"));
-            //bg.TileMode = TileMode.Tile;
-            //bg.Viewport = new Rect(0, 0, 0.15, 0.15);
-            //bg.ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
-            //Canva.Background = bg;
-
             ImageBrush playerImage = new ImageBrush();
             playerImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Sprites/korabl.png"));
             player.Fill = playerImage;
+            
         }
         private void GameLoop(object sender, EventArgs e)
         {
@@ -157,6 +153,8 @@ namespace StarsV2
                 gameTimer.Stop();
                 damageText.Content = "Damage: 100";
                 damageText.Foreground = Brushes.Red;
+                gimi.Stop();
+                lisi.Play();
                 MessageBox.Show("Score " + score + " " + Environment.NewLine + "Game end");
 
                 System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
@@ -202,7 +200,7 @@ namespace StarsV2
                     Stroke = Brushes.Red
 
                 };
-
+                
                 Canvas.SetLeft(newBullet, Canvas.GetLeft(player) + player.Width / 2);
                 Canvas.SetTop(newBullet, Canvas.GetTop(player) - newBullet.Height);
 
@@ -216,6 +214,7 @@ namespace StarsV2
                 GameMenu gameMenu = new GameMenu();
                 gameMenu.Show();
                 gameTimer.Stop();
+                gimi.Stop();
                 Close();
             }
         }
@@ -270,7 +269,7 @@ namespace StarsV2
                 Stroke = Brushes.Red
 
             };
-
+            
             Canvas.SetLeft(newBullet, Canvas.GetLeft(player) + player.Width / 2);
             Canvas.SetTop(newBullet, Canvas.GetTop(player) - newBullet.Height);
 
