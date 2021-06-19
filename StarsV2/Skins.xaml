@@ -24,13 +24,13 @@
             <Image Source="Sprites/korabl1.png" Width="250"/>
         </StackPanel>
         <StackPanel Grid.Column="0" VerticalAlignment="Center" Grid.Row="1">
-            <Button Content="Select" Height="50" Width="100" Click="Button_Click_1" />
+            <Button Content="Базовый уровень" Height="50" Width="120" Click="Button_Click_1" />
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Grid.Row="1">
-            <Button Content="Select" Height="50" Width="100" Click="Button_Click_2"/>
+            <Button Content="Бонусный уровень" Height="50" Width="120" Click="Button_Click_2"/>
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="Назад" Height="50" Width="100" Click="Button_Click"/>
+            <Button Content="Назад" Height="30" Width="100" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>

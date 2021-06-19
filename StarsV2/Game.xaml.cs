@@ -27,8 +27,10 @@ namespace StarsV2
     {
         DispatcherTimer gameTimer = new DispatcherTimer();
         List<Rectangle> itemRemover = new List<Rectangle>();
+
         SoundPlayer gimi = new SoundPlayer(Environment.CurrentDirectory + "/Music/musiclvl2.wav");
         SoundPlayer lisi = new SoundPlayer(Environment.CurrentDirectory + "/Music/Lose3.wav");
+
         Random rand = new Random();
         
         bool moveLeft, moveRight;
@@ -156,10 +158,8 @@ namespace StarsV2
                 gimi.Stop();
                 lisi.Play();
                 MessageBox.Show("Score " + score + " " + Environment.NewLine + "Game end");
-
                 System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
                 Application.Current.Shutdown();
-
             }
 
 

@@ -258,7 +258,7 @@ namespace StarsV2
             Rectangle newEnemy = new Rectangle
             {
                 Tag = "enemy",
-                Height = 50,
+                Height = 60,
                 Width = 56,
                 Fill = enemySprite
             };
