@@ -29,7 +29,7 @@ namespace StarsV2
         List<Rectangle> itemRemover = new List<Rectangle>();
 
         SoundPlayer gimi = new SoundPlayer(Environment.CurrentDirectory + "/Music/musiclvl2.wav");
-        SoundPlayer lisi = new SoundPlayer(Environment.CurrentDirectory + "/Music/Lose3.wav");
+        SoundPlayer lisi = new SoundPlayer(Environment.CurrentDirectory + "/Music/Lose1.wav");
 
         Random rand = new Random();
         
@@ -143,12 +143,7 @@ namespace StarsV2
                 Canva.Children.Remove(i);
             }
 
-
-            //if (score > 5)
-            //{
-            //    limit = 20;
-            //    enemySpeed = 15;
-            //}
+            
 
             if (damage > 99)
             {
@@ -206,7 +201,6 @@ namespace StarsV2
 
                 Canva.Children.Add(newBullet);
                
-                //Thread.Sleep(50);
             }
 
             if (e.Key == Key.Escape)
